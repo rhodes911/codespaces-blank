@@ -1,8 +1,3 @@
-Here’s the full, deeply detailed markdown document for your Civilization VII Turn Logger & AI Trainer project. You can copy and paste it directly into a README.md file for your GitHub repo.
-
-⸻
-
-
 # 🧠 Civilization VII Turn Logger & Machine Learning Trainer
 
 ## 🎯 Project Overview
@@ -62,9 +57,11 @@ victory_type_pursued: "Science"
 victory_achieved: "TBD"
 turns: TBD
 notes: "Testing logging system with a classical science rush."
+```
 
-📅 Example Per-Turn Entry
+### 📅 Example Per-Turn Entry
 
+```yaml
 turn: 41
 era: "Classical"
 science: 28.4
@@ -79,61 +76,61 @@ civic_chosen: "Political Philosophy"
 wonders_built: ["Pyramids"]
 wars_declared: ["Greece"]
 notes: "Preparing for expansion south after stabilizing science production."
+```
 
+---
 
-⸻
+## 🧱 How It Works
 
-🧱 How It Works
+### 1. Markdown-Based Turn Logs
+- Human-readable `.md` files for each game
+- Stored under `/games/` folder with unique IDs
+- Each game has full metadata + sequential turn data
+- Easy to diff, commit, share, and version
 
-1. Markdown-Based Turn Logs
-	•	Human-readable .md files for each game
-	•	Stored under /games/ folder with unique IDs
-	•	Each game has full metadata + sequential turn data
-	•	Easy to diff, commit, share, and version
-
-2. Optional Future Automation
-
+### 2. Optional Future Automation
 Once Civ 7 modding or telemetry is available:
-	•	Use memory reading or APIs to capture game state
-	•	Implement OCR overlay tools to detect screen elements (e.g., Tesseract + OpenCV)
-	•	Hook into Next Turn hotkey to auto-log data
+- Use **memory reading or APIs** to capture game state
+- Implement **OCR overlay tools** to detect screen elements (e.g., Tesseract + OpenCV)
+- Hook into **Next Turn** hotkey to auto-log data
 
-3. Data Extraction & Storage
-	•	Write a Python parser to convert markdown logs to JSON or CSV
-	•	Store in SQLite locally or Supabase/PostgreSQL for scalability
-	•	Include scripts to validate schema and normalize entries
+### 3. Data Extraction & Storage
+- Write a Python parser to convert markdown logs to JSON or CSV
+- Store in SQLite locally or Supabase/PostgreSQL for scalability
+- Include scripts to validate schema and normalize entries
 
-⸻
+---
 
-🧠 What We’ll Use the Data For
+## 🧠 What We'll Use the Data For
 
-📈 1. Statistical Analysis
-	•	Win rates per civ / map type / strategy
-	•	Early-game choices correlated with victory
-	•	Analysis of common loss patterns
-	•	Identify dominant player paths
+### 📈 1. Statistical Analysis
+- Win rates per civ / map type / strategy
+- Early-game choices correlated with victory
+- Analysis of common loss patterns
+- Identify dominant player paths
 
-🤖 2. ML & AI Models
+### 🤖 2. ML & AI Models
 
-Supervised Learning
-	•	Predict outcome (victory type or loss) based on early game state
-	•	Recommend next actions based on historical performance
+#### Supervised Learning
+- Predict outcome (victory type or loss) based on early game state
+- Recommend next actions based on historical performance
 
-Example Models:
-	•	Logistic regression to classify game outcome likelihood
-	•	Decision trees to map victory conditions to strategy sequences
-	•	Neural networks to model high-dimensional turn data
+**Example Models**:
+- Logistic regression to classify game outcome likelihood
+- Decision trees to map victory conditions to strategy sequences
+- Neural networks to model high-dimensional turn data
 
-Reinforcement Learning (Phase 3+)
-	•	Define rewards (e.g., tech progress, unit success, win)
-	•	Train AI agents to make turn-based decisions
-	•	Use player logs as expert demonstrations (imitation learning)
-	•	Explore self-play and simulation environments
+#### Reinforcement Learning (Phase 3+)
+- Define rewards (e.g., tech progress, unit success, win)
+- Train AI agents to make turn-based decisions
+- Use player logs as **expert demonstrations** (imitation learning)
+- Explore **self-play** and simulation environments
 
-⸻
+---
 
-🧪 Example Training Scenario
+## 🧪 Example Training Scenario
 
+```
 Input: Game state at Turn 60
 - 4 cities
 - Campus and Commercial Hub built
@@ -146,22 +143,23 @@ Model Output:
 - 76% chance of Science Victory
 - Suggested actions: Prioritize Industrial Zones, build Universities
 - Avoid war unless defensive
+```
 
+---
 
-⸻
-
-🔌 Optional Plugin Features (Stretch Goals)
+## 🔌 Optional Plugin Features (Stretch Goals)
 
 If Civ 7 modding tools or APIs become available:
-	•	Build a UI overlay plugin that hooks into game events
-	•	Enable real-time stat logging
-	•	Support multiple player telemetry
-	•	Allow live game analysis dashboards
+- Build a **UI overlay plugin** that hooks into game events
+- Enable **real-time stat logging**
+- Support **multiple player telemetry**
+- Allow **live game analysis dashboards**
 
-⸻
+---
 
-🧱 Repository Structure
+## 🧱 Repository Structure
 
+```
 civ7-turn-logger/
 ├── games/
 │   ├── game-001.md
@@ -180,67 +178,58 @@ civ7-turn-logger/
 │   └── how-it-works.md
 ├── README.md
 └── turn-log-template.md
+```
 
+---
 
-⸻
+## 📦 Tools & Libraries
 
-📦 Tools & Libraries
+| Function              | Tools / Libraries            |
+|-----------------------|------------------------------|
+| Logging & Schema      | Markdown, YAML, JSON         |
+| Parsing               | Python, Pandas               |
+| Visualization         | Plotly, Matplotlib           |
+| ML Training           | Scikit-learn, PyTorch        |
+| Storage               | SQLite (local), Supabase     |
+| OCR (optional)        | Tesseract, OpenCV            |
+| Web UI (optional)     | Flask, Next.js, Supabase     |
 
-Function	Tools / Libraries
-Logging & Schema	Markdown, YAML, JSON
-Parsing	Python, Pandas
-Visualization	Plotly, Matplotlib
-ML Training	Scikit-learn, PyTorch
-Storage	SQLite (local), Supabase
-OCR (optional)	Tesseract, OpenCV
-Web UI (optional)	Flask, Next.js, Supabase
+---
 
-
-⸻
-
-🔐 Ethics & Privacy
+## 🔐 Ethics & Privacy
 
 This project prioritizes privacy and transparency:
-	•	All logs are user-owned
-	•	No personal data is ever collected
-	•	Multiplayer logs (if ever used) will be fully anonymized
-	•	Contributors can opt-in to share logs for open AI research
 
-⸻
+- **All logs are user-owned**
+- **No personal data** is ever collected
+- Multiplayer logs (if ever used) will be **fully anonymized**
+- Contributors can opt-in to share logs for open AI research
 
-🤝 Contributing
+---
+
+## 🤝 Contributing
 
 We welcome contributions from:
-	•	Civ players logging games
-	•	Python devs writing parsers or scripts
-	•	Data scientists building models
-	•	Strategists helping identify decision patterns
+- Civ players logging games
+- Python devs writing parsers or scripts
+- Data scientists building models
+- Strategists helping identify decision patterns
 
 To get started:
-	1.	Copy turn-log-template.md and log your next game
-	2.	Submit a PR with your game log in /games/
-	3.	Help us build models from the data!
+1. Copy `turn-log-template.md` and log your next game
+2. Submit a PR with your game log in `/games/`
+3. Help us build models from the data!
 
-⸻
+---
 
-🚀 The Long-Term Vision
+## 🚀 The Long-Term Vision
 
 Imagine an AI that:
-	•	Knows how to beat Civilization VII on Deity
-	•	Learns not from hardcoded rules, but from thousands of human games
-	•	Adapts to your playstyle and improves your win rate
-	•	Becomes a digital grandmaster in 4X strategy
+- Knows how to beat *Civilization VII* on Deity
+- Learns not from hardcoded rules, but from thousands of human games
+- Adapts to your playstyle and improves your win rate
+- Becomes a digital grandmaster in 4X strategy
 
 This is more than a mod. It’s a step toward machine understanding of strategic long-term planning — and a way to make your next game a little smarter.
 
 Let’s build it. One turn at a time.
-
-⸻
-
-
-Would you like me to generate:
-- A `turn-log-template.md` file to go with this?
-- A JSON schema for validating logs?
-- A sample `game-001.md` file to demonstrate usage?
-
-Let me know how you'd like to expand the repo next.
